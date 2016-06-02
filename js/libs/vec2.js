@@ -21,19 +21,19 @@ Vec2.prototype = {
         else return self.set(self.x + v, self.y + v);
     },
 
-    subtract: function(v) {
+    subtract: function(v, copy) {
         self = (typeof copy === 'undefined') ? this : this.clone();
         if (v instanceof Vec2) return self.set(self.x - v.x, self.y - v.y);
         else return self.set(self.x - v, self.y - v);
     },
 
-    multiply: function(v) {
+    multiply: function(v, copy) {
         self = (typeof copy === 'undefined') ? this : this.clone();
         if (v instanceof Vec2) return self.set(self.x * v.x, self.y * v.y);
         else return self.set(self.x * v, self.y * v);
     },
 
-    divide: function(v) {
+    divide: function(v, copy) {
         self = (typeof copy === 'undefined') ? this : this.clone();
         if (v instanceof Vec2) return self.set(self.x / v.x, self.y / v.y);
         else return self.set(self.x / v, self.y / v);
