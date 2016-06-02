@@ -11,7 +11,9 @@ function AssetManager(config){
 AssetManager.prototype = {
 
     init: function() {
-        for (var i=0; i < this.config.paths.length; i++) { this.queueDownload(this.config.paths[i]); }
+        for (var i=0; i < this.config.paths.length; i++) {
+            this.queueDownload(this.config.paths[i]);
+        }
     },
 
     queueDownload: function(path) { this.downloadQueue.push(this.base + path); },
