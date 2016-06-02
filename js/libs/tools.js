@@ -135,9 +135,9 @@ var Tools = {
     random: function(start, end) {
         var a,b;
         if (typeof end === 'undefined') {
-            a = 0; b = start;
+            a = 0; b = start + 1;
         } else {
-            a = start; b = end;
+            a = start; b = end + 1;
         }
         return Math.floor(Math.random() * b) + a;
     }
