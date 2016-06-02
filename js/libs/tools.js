@@ -130,6 +130,16 @@ var Tools = {
             return true;
         else
             return false;
+    },
+
+    random: function(start, end) {
+        var a,b;
+        if (typeof end === 'undefined') {
+            a = 0; b = start;
+        } else {
+            a = start; b = end;
+        }
+        return Math.floor(Math.random() * b) + a;
     }
 
 };

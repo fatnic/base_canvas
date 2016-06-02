@@ -39,6 +39,10 @@ Vec2.prototype = {
         else return self.set(self.x / v, self.y / v);
     },
 
+    distance: function(v) {
+        return Math.sqrt((this.x-v.x)*(this.x-v.x) + (this.y-v.y)*(this.y-v.y));
+    },
+
     equals: function(v) {
         return this.x == v.x && this.y == v.y;
     },
