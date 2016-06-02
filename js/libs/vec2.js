@@ -12,27 +12,31 @@ Vec2.prototype = {
     },
 
     negative: function() {
-        return new Vec2(-this.x, -this.y);
+        return this.set(-this.x, -this.y);
     },
 
-    add: function(v) {
-        if (v instanceof Vec2) return this.set(this.x + v.x, this.y + v.y);
-        else return this.set(this.x + v, this.y + v);
+    add: function(v, copy) {
+        self = (typeof copy === 'undefined') ? this : this.clone();
+        if (v instanceof Vec2) return self.set(self.x + v.x, self.y + v.y);
+        else return self.set(self.x + v, self.y + v);
     },
 
     subtract: function(v) {
-        if (v instanceof Vec2) return this.set(this.x - v.x, this.y - v.y);
-        else return this.set(this.x - v, this.y - v);
+        self = (typeof copy === 'undefined') ? this : this.clone();
+        if (v instanceof Vec2) return self.set(self.x - v.x, self.y - v.y);
+        else return self.set(self.x - v, self.y - v);
     },
 
     multiply: function(v) {
-        if (v instanceof Vec2) return this.set(this.x * v.x, this.y * v.y);
-        else return this.set(this.x * v, this.y * v);
+        self = (typeof copy === 'undefined') ? this : this.clone();
+        if (v instanceof Vec2) return self.set(self.x * v.x, self.y * v.y);
+        else return self.set(self.x * v, self.y * v);
     },
 
     divide: function(v) {
-        if (v instanceof Vec2) return this.set(this.x / v.x, this.y / v.y);
-        else return this.set(this.x / v, this.y / v);
+        self = (typeof copy === 'undefined') ? this : this.clone();
+        if (v instanceof Vec2) return self.set(self.x / v.x, self.y / v.y);
+        else return self.set(self.x / v, self.y / v);
     },
 
     equals: function(v) {
