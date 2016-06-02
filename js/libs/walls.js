@@ -27,7 +27,6 @@ Wall.prototype = {
 };
 
 function wallByGrid(x,y,w,h,grid,render) {
-    if (typeof(grid) === 'undefined') grid = 16;
     Walls.push(new Wall(x*grid, y*grid, w*grid, h*grid,render));
 }
 
