@@ -77,6 +77,15 @@ Vec2.prototype = {
         }
     },
 
+    vectorTo: function(v) {
+        return v.subtract(this);
+    },
+
+    normalize: function() {
+        var l = this.length();
+        return new Vec2(this.x / l, this.y / l);
+    },
+
     // angleTo: function(a) {
     //     return Math.acos(this.dot(a) / (this.length() * a.length()));
     // },
