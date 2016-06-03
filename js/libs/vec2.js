@@ -91,12 +91,7 @@ Vec2.prototype = {
         return this.unit();
     },
 
-    // angleTo: function(a) {
-    //     return Math.acos(this.dot(a) / (this.length() * a.length()));
-    // },
-
     angleTo: function(a) {
-        // return Math.acos(this.dot(a) / (this.length() * a.length()));
         return Math.atan2(a.y - this.y, a.x - this.x);
     },
 
