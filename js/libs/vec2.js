@@ -63,6 +63,20 @@ Vec2.prototype = {
         return Math.asin(this.y / this.length());
     },
 
+    limit: function(v) {
+        self = (typeof copy === 'undefined') ? this : this.clone();
+        if (v instanceof Vec2) {
+            x = (self.x > v.x) ? v.x : self.x;
+            y = (self.y > v.y) ? v.y : self.y;
+            self.set(x, y);
+        }
+        else {
+            x = (self.x > v) ? v : self.x;
+            y = (self.y > v) ? v : self.y;
+            return self.set(x, y);
+        }
+    },
+
     // angleTo: function(a) {
     //     return Math.acos(this.dot(a) / (this.length() * a.length()));
     // },
