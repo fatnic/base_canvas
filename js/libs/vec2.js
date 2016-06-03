@@ -88,8 +88,7 @@ Vec2.prototype = {
     },
 
     normalize: function() {
-        var l = this.length();
-        return new Vec2(this.x / l, this.y / l);
+        return this.unit();
     },
 
     // angleTo: function(a) {
