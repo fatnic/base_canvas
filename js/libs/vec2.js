@@ -11,6 +11,12 @@ Vec2.prototype = {
         return this;
     },
 
+    reset: function() {
+        this.x = 0;
+        this.y = 0;
+        return this;
+    },
+
     negative: function() {
         return this.set(-this.x, -this.y);
     },
