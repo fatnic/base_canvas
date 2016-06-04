@@ -74,13 +74,12 @@ Vec2.prototype = {
         if (v instanceof Vec2) {
             x = (Math.min(v.x, Math.max(-v.x, self.x)));
             y = (Math.min(v.y, Math.max(-v.x, self.y)));
-            return self.set(x, y);
         }
         else {
             x = (Math.min(v, Math.max(-v, self.x)));
             y = (Math.min(v, Math.max(-v, self.y)));
-            return self.set(x, y);
         }
+        return self.set(x, y);
     },
 
     vectorTo: function(v) {
