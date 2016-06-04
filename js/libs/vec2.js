@@ -69,16 +69,16 @@ Vec2.prototype = {
         return Math.asin(this.y / this.length());
     },
 
-    limit: function(v) {
+    limit: function(v, copy) {
         self = (typeof copy === 'undefined') ? this : this.clone();
         if (v instanceof Vec2) {
-            x = (self.x > v.x) ? v.x : self.x;
-            y = (self.y > v.y) ? v.y : self.y;
-            self.set(x, y);
+            x = (Math.min(v.x, Math.max(-v.x, self.x)));
+            y = (Math.min(v.y, Math.max(-v.x, self.y)));
+            return self.set(x, y);
         }
         else {
-            x = (self.x > v) ? v : self.x;
-            y = (self.y > v) ? v : self.y;
+            x = (Math.min(v, Math.max(-v, self.x)));
+            y = (Math.min(v, Math.max(-v, self.y)));
             return self.set(x, y);
         }
     },
