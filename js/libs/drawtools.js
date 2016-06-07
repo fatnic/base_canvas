@@ -52,5 +52,10 @@ var DrawTools = {
         for (var i = 1; i < polygon.length; i++) { context.lineTo(polygon[i].x, polygon[i].y); }
         context.lineTo(polygon[0].x, polygon[0].y);
         context.stroke();
+    },
+
+    clear: function(context, colour) {
+        context.fillStyle = colour || 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
     }
 };
