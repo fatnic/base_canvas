@@ -3,6 +3,15 @@
 var RAD = 2 * Math.PI;
 
 var Tools = {
+    i2xy: function(index, width) {
+        var x = index % width;
+        var y = Math.floor(index/width);
+        return [x,y];
+    },
+
+    xy2i: function(x, y, width) {
+        return y * width + x;
+    },
 
     degreesToRadians: function(deg) { return deg * (Math.PI / 180); },
     radiansToDegrees: function(rad) { return rad * (180 / Math.PI); },
