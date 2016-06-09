@@ -1,3 +1,17 @@
+/*
+    Usage:
+
+    var assets = {
+        base: '../assets',
+        paths: ['sprite.png', 'loader.json']
+    };
+
+    var AM = new AssetManager(assets);
+    AM.downloadAll(callback_when_done);
+    AM.get('img.sprite');
+    AM.get('json.loader');
+*/
+
 function AssetManager(config){
     this.successCount = 0;
     this.errorCount = 0;
