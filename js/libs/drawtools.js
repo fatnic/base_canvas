@@ -15,7 +15,7 @@ var DrawTools = {
     },
 
     circle: function(context, position, radius, colour) {
-        context.fillStyle = colour;
+        context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;
         context.beginPath();
     	context.arc(position.x, position.y, radius, 0, RAD, false);
         context.fill();
@@ -44,9 +44,9 @@ var DrawTools = {
         context.fill();
     },
 
-    polyOutline: function(context, polygon, width, colour) {
-        context.strokeStyle = colour;
-        context.lineWidth = width;
+    polyOutline: function(context, polygon, colour, thickness) {
+        context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;
+        context.lineWidth = (typeof thickness === 'undefined') ? 1 : thickness;
         context.beginPath();
         context.moveTo(polygon[0].x, polygon[0].y);
         for (var i = 1; i < polygon.length; i++) { context.lineTo(polygon[i].x, polygon[i].y); }
@@ -55,7 +55,7 @@ var DrawTools = {
     },
 
     clear: function(context, colour) {
-        context.fillStyle = colour || 'white';
+        context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;
         context.fillRect(0, 0, canvas.width, canvas.height);
     }
 };
