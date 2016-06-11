@@ -141,14 +141,20 @@ var Tools = {
             return false;
     },
 
-    random: function(start, end) {
-        var a,b;
-        if (typeof end === 'undefined') {
-            a = 0; b = start + 1;
-        } else {
-            a = start; b = end + 1;
-        }
-        return Math.floor(Math.random() * b) + a;
+    random: function(min, max) {
+        var rand = Math.random();
+            if(arguments.length === 0) {
+              return rand;
+            } else if(arguments.length === 1) {
+              return rand * min;
+            } else {
+              if (min > max) {
+                var tmp = min;
+                min = max;
+                max = tmp;
+              }
+              return rand * (max - min) + min;
+            }
     },
 
     map: function(n, start1, stop1, start2, stop2) {
