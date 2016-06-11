@@ -1,8 +1,8 @@
 var DrawTools = {
 
     line: function(context, start, end, colour, thickness) {
-        context.strokeStyle = (typeof(colour) === 'undefined') ? 'white' : thickness;
-        context.lineWidth = (typeof(thickness) === 'undefined') ? 1 : thickness;
+        context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;
+        context.lineWidth = (typeof thickness === 'undefined') ? 1 : thickness;
         context.beginPath();
         context.moveTo(start.x, start.y);
         context.lineTo(end.x, end.y);
@@ -22,8 +22,8 @@ var DrawTools = {
     },
 
     ring: function(context, position, radius, colour, thickness) {
-        context.strokeStyle = colour;
-        context.lineWidth = (typeof(thickness) === 'undefined') ? 1 : thickness;
+        context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;
+        context.lineWidth = (typeof thickness === 'undefined') ? 1 : thickness;
         context.beginPath();
     	context.arc(position.x, position.y, radius, 0, RAD, false);
         context.stroke();
