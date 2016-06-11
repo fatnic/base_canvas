@@ -25,7 +25,7 @@ var Tools = {
         return result;
     },
 
-    radianBetween: function(rad, start, end) {
+    isAngleBetween: function(rad, start, end) {
         rad = (RAD + (rad % RAD)) % RAD;
         start = (RAD + start) % RAD;
         end = (RAD + end) % RAD;

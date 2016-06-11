@@ -1,4 +1,4 @@
-var DrawTools = {
+var Draw = {
 
     line: function(context, start, end, colour, thickness) {
         context.strokeStyle = (typeof colour === 'undefined') ? 'white' : colour;

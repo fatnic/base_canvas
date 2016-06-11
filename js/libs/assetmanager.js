@@ -17,7 +17,7 @@ function AssetManager(config){
     this.errorCount = 0;
     this.downloadQueue = [];
     this.cache = {};
-    this.base = config.base;
+    this.base = config.base || '';
     this.config = config;
     this.init();
 }
@@ -30,7 +30,7 @@ AssetManager.prototype = {
         }
     },
 
-    queueDownload: function(path) { this.downloadQueue.push(this.base + path); },
+    queueDownload: function(path) { this.downloadQueue.push(this.config.base + path); },
 
     downloadAll: function(callback) {
 
